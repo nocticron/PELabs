@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>1899.12.30 00:00:00.000.514,C:\Users\student\Documents\Embarcadero\Studio\Projects\Unit1.h=C:\Users\student\Desktop\lab4\Unit1.h</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.104,C:\Users\student\Documents\Embarcadero\Studio\Projects\Project1PCH1.h=C:\Users\student\Desktop\lab4\Project1PCH1.h</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.509,=C:\Users\student\Documents\Embarcadero\Studio\Projects\Unit1.cpp</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.514,C:\Users\student\Documents\Embarcadero\Studio\Projects\Unit1.cpp=C:\Users\student\Desktop\lab4\Unit1.cpp</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.119,=C:\Users\Def\Desktop\4sem\!PE\Новая папка\Lab4\Unit2.cpp</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.514,C:\Users\student\Documents\Embarcadero\Studio\Projects\Unit1.dfm=C:\Users\student\Desktop\lab4\Unit1.dfm</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.489,=C:\Users\student\Documents\Embarcadero\Studio\Projects\Project1PCH1.h</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.285,C:\Users\student\Documents\Embarcadero\Studio\Projects\Project1.cbproj=C:\Users\student\Desktop\lab4\Project1.cbproj</Transaction>
+  </Transactions>
+</BorlandProject>
