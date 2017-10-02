@@ -3,52 +3,65 @@
 
 #include "stdafx.h"
 #include "Zoo.h"
+#include <iostream> 
 #include <fstream>
+#include <conio.h>
 
 void list_input(list<Zoo> &ZooList, char* fname);
 void list_output(list<Zoo> &ZooList, char* fname);
 
 int main(int argc, char* argv[])
 {
-	if (argc = 1) { return 1; }
 	
 	list<Zoo> ZooList;
-	list_input(ZooList, argv[1]);
 
-//searching population maximum with lambda expression
-//SYNTAX:
-//[ capture ] ( params ) attribute -> ret { body }		
+//	list_input(ZooList, argv[1]);
+	list_input(ZooList, "input.txt");
 
 
-/*	int pmax = 0;
-	pmax= [](list<Zoo> &ZooList)->int {
-
-		int max = 0;
-		list<Zoo>::iterator i;
-		for (i = ZooList.begin(); i != ZooList.end(); ++i) {
-			if ((*i).GetPopulation() > max) { max = (*i).GetPopulation(); }
-		}
-		return max;
-	};
-*/
-
-//sorting by area/population, using sort from <algorithm>
-//lambda-based comparator
+	
+	//sorting by area/population, using sort from <algorithm>
+	//lambda-based comparator
+	//SYNTAX:
+	//[ capture ] ( params ) attribute -> ret { body }		
 
 	ZooList.sort([](Zoo& zoo1, Zoo& zoo2) {	
 		return 	((double)zoo1.GetArea() / zoo1.GetPopulation()) >
 				((double)zoo2.GetArea() / zoo2.GetPopulation());});
 		
-	list_output(ZooList, argv[2]);
+//	list_output(ZooList, argv[2]);
+	list_output(ZooList, "output.txt");
+
+
+	//searching population maximum with lambda expression
+
+
+	int pmax = 0;
+	[&pmax](list<Zoo> &ZooList) {
+
+	list<Zoo>::iterator i;
+	for (i = ZooList.begin(); i != ZooList.end(); ++i)
+	{
+		if ((*i).GetPopulation() > pmax) { pmax = (*i).GetPopulation(); }
+	}
+
+	}(ZooList);
+	
+	std::cout << "Maximum population: " << pmax;
+
+	_getch();
+
 	return 0;
 }
 
 
-//input from file
+
+
+
+
 
 void list_input(list<Zoo> &ZooList, char* fname)
 {
-	int n=0;
 	ifstream f(fname, ios_base::in);
 	if (f.is_open()) {
 
@@ -65,6 +78,23 @@ void list_input(list<Zoo> &ZooList, char* fname)
 			temp.SetArea(Area);
 			ZooList.push_back(temp);
 		}
+		f.close();
 	}
+	
 }
 
+void list_output(list<Zoo> &ZooList, char* fname)
+{
+	ofstream f(fname, ios_base::out);
+	if (f.is_open())
+	{
+		list<Zoo>::iterator i;
+		for (i = ZooList.begin(); i != ZooList.end(); ++i) 
+		{
+			f << (*i).GetName() << " " << (*i).GetPopulation() << " " << (*i).GetArea() << endl;
+			std::cout << (*i).GetName() << " " << (*i).GetPopulation() << " " << (*i).GetArea() << endl;
+		}
+		f.close();
+	}
+
+}

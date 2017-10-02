@@ -26,7 +26,15 @@ int Zoo::SetArea(int NewArea)
 	return Area;
 }
 //---------------------------------------------------------------------------
-
-bool Zoo::operator < (const Zoo &zoo) {
-	return Population < zoo.GetPopulation();
+string Zoo::GetName() const
+{
+	return Name;
+}
+int Zoo::GetPopulation() const
+{
+	return Population;
+}
+int Zoo::GetArea() const
+{
+	return Area;
 }
